@@ -5,34 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue CDN Note</title>
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
+    <style>
+      ul.books {
+        list-style: none;
+      }
+      ul.books li {
+        float: left;
+      }
+      .box {
+        padding: 100px;
+        width: 400px;
+        text-align: center;
+        background-color: beige;
+        margin: 20px;
+        display: inline-block;
+      }
+      .fav {
+        background-color: darkseagreen;
+      }
+    </style>
   </head>
   <body>
-    <h1>Vue Note 6</h1>
+    <h1>Vue Note 7</h1>
 
     <!-- this is where we inject the vue-->
     <div id="app">
-      <!--This is the html way-->
-      <a href="http://www.oktador.com">This link will go to my website</a>
-
-      <br />
-
-      <!--We cannot do this-->
-      <a href="url">This link wont go to my website</a>
-
-      <br />
-
-      <!--We cannot do this-->
-      <a href="{{url}}">This link wont go to my website</a>
-
-      <br />
-
-      <!--We can do this-->
-      <a v-bind:href="url">This link will go to my website</a>
-
-      <br />
-
-      <!--We can do this-->
-      <a :href="url">This link will go to my website</a>
+      <ul class="books">
+        <li v-for="book in books">
+          <div class="box" :class="{fav:book.isFav}">
+            <img :src="book.img" :alt="book.title" />
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+            <input type="checkbox" name="favorite" v-model="book.isFav" />
+            <label for="favorite">Is Favorite</label><br />
+          </div>
+        </li>
+      </ul>
     </div>
 
     <script src="app.js"></script>
