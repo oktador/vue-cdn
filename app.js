@@ -12,13 +12,13 @@ const app = Vue.createApp({
           title: "title2",
           author: "author2",
           img: "./assets/img/2.png",
-          isFav: false,
+          isFav: true,
         },
         {
           title: "title3",
           author: "author3",
           img: "./assets/img/3.png",
-          isFav: false,
+          isFav: true,
         },
         {
           title: "title4",
@@ -34,6 +34,14 @@ const app = Vue.createApp({
         },
       ],
     };
+  },
+  computed: {
+    favoriteBooks() {
+      return this.books.filter((book) => book.isFav);
+    },
+    nonFavoriteBooks() {
+      return this.books.filter((book) => !book.isFav);
+    },
   },
 });
 

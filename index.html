@@ -12,9 +12,14 @@
       ul.books li {
         float: left;
       }
+
+      hr {
+        clear: both;
+      }
+
       .box {
-        padding: 100px;
-        width: 400px;
+        padding: 50px;
+        width: 300px;
         text-align: center;
         background-color: beige;
         margin: 20px;
@@ -26,17 +31,48 @@
     </style>
   </head>
   <body>
-    <h1>Vue Note 7</h1>
+    <h1>Vue Note 8</h1>
 
     <!-- this is where we inject the vue-->
     <div id="app">
+      <hr />
+      <h2>Favorite Books</h2>
+      <hr />
       <ul class="books">
-        <li v-for="book in books">
+        <li v-for="book in favoriteBooks">
           <div class="box" :class="{fav:book.isFav}">
             <img :src="book.img" :alt="book.title" />
             <h3>{{book.title}}</h3>
             <p>{{book.author}}</p>
-            <input type="checkbox" name="favorite" v-model="book.isFav" />
+
+            <!--:key is important, otherwise index will be used to identify input-->
+            <input
+              :key="book"
+              type="checkbox"
+              name="favorite"
+              v-model="book.isFav"
+            />
+            <label for="favorite">Is Favorite</label><br />
+          </div>
+        </li>
+      </ul>
+
+      <hr />
+      <h2>Other Books</h2>
+      <hr />
+      <ul class="books">
+        <li v-for="book in nonFavoriteBooks">
+          <div class="box" :class="{fav:book.isFav}">
+            <img :src="book.img" :alt="book.title" />
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+
+            <input
+              :key="book"
+              type="checkbox"
+              name="favorite"
+              v-model="book.isFav"
+            />
             <label for="favorite">Is Favorite</label><br />
           </div>
         </li>
