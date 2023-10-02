@@ -1,20 +1,23 @@
 const app = Vue.createApp({
   data() {
     return {
-      info1: "info1",
-      info2: "info2",
-      number: 0,
+      x: 0,
+      y: 0,
     };
   },
   methods: {
-    increaseNumber() {
-      this.number++;
+    mouseOver(e) {
+      console.log("type: " + e.type);
     },
-    decreaseNumber() {
-      this.number--;
+    mouseLeave(e) {
+      console.log("type: " + e.type);
     },
-    changeInfo1(info) {
-      this.info1 = info;
+    dblClick(e, extraParameter) {
+      console.log("type: " + e.type + " extra parameter: " + extraParameter);
+    },
+    mouseMove(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     },
   },
 });

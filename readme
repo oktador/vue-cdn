@@ -1,3 +1,5 @@
-Note 3
+Note 4
 
-v-on:click (@click) event
+@mouseover, @mouseleave, @dblclick, @mousemove events
+
+sending parameter with event handler method
