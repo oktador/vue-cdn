@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue CDN Note</title>
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
-    <style>
-      .box {
-        padding: 100px;
-        width: 400px;
-        text-align: center;
-        background-color: gainsboro;
-        margin: 20px;
-        display: inline-block;
-      }
-    </style>
   </head>
   <body>
-    <h1>Vue Note 4</h1>
+    <h1>Vue Note 5</h1>
 
     <!-- this is where we inject the vue-->
     <div id="app">
-      <div class="box" @mouseover="mouseOver">Mouse Over</div>
-      <div class="box" @mouseleave="mouseLeave">Mouse Leave</div>
-      <div class="box" @dblclick="dblClick($event, 'I\'m the extra parameter')">
-        Double Click
+      <!--Button title from vue-->
+      <button @click="showHide">{{buttonTitle}}</button>
+
+      <br />
+
+      <!--Button title conditional span-->
+      <button @click="showHide">
+        <span v-if="showInfos">Hide Infos</span>
+        <span v-else>Show Infos</span>
+      </button>
+
+      <!--Conditional show-->
+      <div v-if="showInfos">
+        <h2>{{info1}} - {{info2}} - {{number}}</h2>
       </div>
-      <div class="box" @mousemove="mouseMove">{{x}} , {{y}}</div>
+
+      <div v-show="showInfos">Infos being shown</div>
     </div>
 
     <script src="app.js"></script>

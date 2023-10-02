@@ -1,23 +1,17 @@
 const app = Vue.createApp({
   data() {
     return {
-      x: 0,
-      y: 0,
+      info1: "info1",
+      info2: "info2",
+      number: 0,
+      showInfos: true,
+      buttonTitle: "Hide Infos",
     };
   },
   methods: {
-    mouseOver(e) {
-      console.log("type: " + e.type);
-    },
-    mouseLeave(e) {
-      console.log("type: " + e.type);
-    },
-    dblClick(e, extraParameter) {
-      console.log("type: " + e.type + " extra parameter: " + extraParameter);
-    },
-    mouseMove(e) {
-      this.x = e.offsetX;
-      this.y = e.offsetY;
+    showHide() {
+      this.showInfos = !this.showInfos;
+      this.buttonTitle = this.showInfos ? "Hide Infos" : "Show Infos";
     },
   },
 });

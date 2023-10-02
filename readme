@@ -1,5 +1,4 @@
-Note 4
+Note 5
 
-@mouseover, @mouseleave, @dblclick, @mousemove events
-
-sending parameter with event handler method
+Conditions v-if v-else: Causes elements to be in DOM or not
+and v-show: only enable-disable visibility "display:none"
