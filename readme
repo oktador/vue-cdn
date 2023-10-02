@@ -1,4 +1,3 @@
-Note 5
+Note 6
 
-Conditions v-if v-else: Causes elements to be in DOM or not
-and v-show: only enable-disable visibility "display:none"
+data binding: "v-bind:" or ":"

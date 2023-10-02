@@ -7,27 +7,32 @@
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
   </head>
   <body>
-    <h1>Vue Note 5</h1>
+    <h1>Vue Note 6</h1>
 
     <!-- this is where we inject the vue-->
     <div id="app">
-      <!--Button title from vue-->
-      <button @click="showHide">{{buttonTitle}}</button>
+      <!--This is the html way-->
+      <a href="http://www.oktador.com">This link will go to my website</a>
 
       <br />
 
-      <!--Button title conditional span-->
-      <button @click="showHide">
-        <span v-if="showInfos">Hide Infos</span>
-        <span v-else>Show Infos</span>
-      </button>
+      <!--We cannot do this-->
+      <a href="url">This link wont go to my website</a>
 
-      <!--Conditional show-->
-      <div v-if="showInfos">
-        <h2>{{info1}} - {{info2}} - {{number}}</h2>
-      </div>
+      <br />
 
-      <div v-show="showInfos">Infos being shown</div>
+      <!--We cannot do this-->
+      <a href="{{url}}">This link wont go to my website</a>
+
+      <br />
+
+      <!--We can do this-->
+      <a v-bind:href="url">This link will go to my website</a>
+
+      <br />
+
+      <!--We can do this-->
+      <a :href="url">This link will go to my website</a>
     </div>
 
     <script src="app.js"></script>
