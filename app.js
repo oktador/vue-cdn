@@ -6,6 +6,17 @@ const app = Vue.createApp({
       number: 0,
     };
   },
+  methods: {
+    increaseNumber() {
+      this.number++;
+    },
+    decreaseNumber() {
+      this.number--;
+    },
+    changeInfo1(info) {
+      this.info1 = info;
+    },
+  },
 });
 
 app.mount("#app");

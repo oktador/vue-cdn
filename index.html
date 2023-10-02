@@ -7,11 +7,32 @@
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
   </head>
   <body>
-    <h1>Vue Note 2</h1>
+    <h1>Vue Note 3</h1>
 
-    <!-- this is where we inject the vue app-->
+    <!-- this is where we inject the vue-->
     <div id="app">
       <h3>{{info1}} - {{info2}} - {{number}}</h3>
+
+      <!--We can control data inside html, because its pure js -->
+      <div>
+        <button v-on:click="number++">Increase Number 1</button>
+        <button v-on:click="number--">Decrease Number 1</button>
+      </div>
+
+      <!--we can use @ in instead of v-on: -->
+      <div>
+        <button @click="number++">Increase Number 2</button>
+        <button @click="number--">Decrease Number 2</button>
+      </div>
+
+      <!--We can control data inside vue app -->
+      <div>
+        <button @click="increaseNumber">Increase Number 3</button>
+        <button @click="decreaseNumber">Decrease Number 3</button>
+      </div>
+      <div>
+        <button @click="changeInfo1('new info1')">Change Info</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
